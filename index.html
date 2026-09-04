@@ -3,128 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>网站建设中</title>
+<title>陈亦帆 · 设计师</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
 
   :root {
-    --ink: #1c1b19;
-    --paper: #ece7dd;
-    --line: #c9c2b3;
-    --accent: #3d5a4a;
+    --ink: #1a1a18;
+    --paper: #faf9f6;
+    --line: #ddd8cd;
+    --accent: #2f4858;
+    --muted: #6f6a5f;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html, body {
-    height: 100%;
-  }
 
   body {
     background: var(--paper);
     color: var(--ink);
     font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---- Header / nav ---- */
+  header {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-row {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 28px 32px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    padding: 24px;
-    overflow: hidden;
   }
 
-  .frame {
-    width: 100%;
-    max-width: 640px;
-    border: 1px solid var(--line);
-    padding: 64px 48px;
-    position: relative;
+  .mark {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    letter-spacing: 0.01em;
   }
 
-  .frame::before,
-  .frame::after {
-    content: "";
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border: 1px solid var(--ink);
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 28px;
   }
-  .frame::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
-  .frame::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
 
-  .eyebrow {
-    font-size: 13px;
-    letter-spacing: 0.02em;
+  nav a:hover { color: var(--ink); }
+
+  /* ---- Hero ---- */
+  .hero {
+    padding: 96px 0 88px;
+  }
+
+  .hero .role {
+    font-size: 14px;
     color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    max-width: 14ch;
     margin-bottom: 28px;
   }
 
-  h1 {
-    font-family: 'Newsreader', serif;
-    font-weight: 400;
-    font-size: clamp(2.2rem, 6vw, 3.4rem);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    margin-bottom: 24px;
+  .hero p {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 48ch;
   }
 
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
+  /* ---- Skills ---- */
+  section {
+    padding: 64px 0;
+    border-top: 1px solid var(--line);
   }
 
-  p {
-    font-size: 15.5px;
-    line-height: 1.7;
-    max-width: 46ch;
-    color: #4a453d;
-  }
-
-  .rule {
-    width: 100%;
-    height: 1px;
-    background: var(--line);
-    margin: 40px 0;
-  }
-
-  .meta {
+  .section-head {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin-bottom: 40px;
+  }
+
+  .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+  }
+
+  .section-head span {
     font-size: 13px;
-    color: #6b665c;
+    color: var(--muted);
   }
 
-  .meta span:first-child {
-    font-family: 'Newsreader', serif;
-    font-style: italic;
-    font-size: 15px;
+  .skill-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .skill-row:last-child { border-bottom: none; }
+
+  .skill-name {
+    font-size: 16px;
+  }
+
+  .skill-desc {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .skill-level {
+    display: flex;
+    gap: 6px;
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--line);
+  }
+
+  .dot.filled { background: var(--accent); }
+
+  /* ---- Footer ---- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 36px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer a {
     color: var(--ink);
+    text-decoration: none;
   }
 
-  @media (max-width: 520px) {
-    .frame { padding: 48px 28px; }
-    .meta { flex-direction: column; gap: 8px; align-items: flex-start; }
+  @media (max-width: 560px) {
+    .nav-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+    nav a { margin-left: 0; margin-right: 20px; }
+    .hero { padding: 64px 0 56px; }
+    .skill-row { grid-template-columns: 1fr; gap: 8px; }
+    footer { flex-direction: column; align-items: flex-start; gap: 8px; }
   }
 </style>
 </head>
 <body>
 
-  <div class="frame">
-    <div class="eyebrow">此处即将开放</div>
-    <h1>页面正在<em>筹备</em>之中。</h1>
-    <p>我们正在整理内容，很快便会呈现。感谢您的耐心，欢迎稍后再来看看。</p>
-
-    <div class="rule"></div>
-
-    <div class="meta">
-      <span>敬请期待</span>
-      <span id="today"></span>
+  <header>
+    <div class="nav-row">
+      <div class="mark">陈亦帆</div>
+      <nav>
+        <a href="#skills">专长</a>
+        <a href="#contact">联系</a>
+      </nav>
     </div>
+  </header>
+
+  <div class="wrap">
+
+    <section class="hero" style="border-top:none;">
+      <div class="role">视觉设计师 / 品牌顾问</div>
+      <h1>用清晰的设计，讲明白复杂的事。</h1>
+      <p>专注于品牌视觉与数字产品设计，擅长把模糊的想法整理成有条理、可执行的设计语言。</p>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <h2>专长</h2>
+        <span>Skills</span>
+      </div>
+
+      <div class="skill-row">
+        <div>
+          <div class="skill-name">品牌视觉设计</div>
+          <div class="skill-desc">标志、视觉识别系统、品牌手册</div>
+        </div>
+        <div class="skill-level">
+          <span class="dot filled"></span><span class="dot filled"></span>
+          <span class="dot filled"></span><span class="dot filled"></span><span class="dot"></span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div>
+          <div class="skill-name">UI / 产品设计</div>
+          <div class="skill-desc">网页与移动端界面设计、设计系统搭建</div>
+        </div>
+        <div class="skill-level">
+          <span class="dot filled"></span><span class="dot filled"></span>
+          <span class="dot filled"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div>
+          <div class="skill-name">排版与编辑设计</div>
+          <div class="skill-desc">刊物、画册、活动物料排版</div>
+        </div>
+        <div class="skill-level">
+          <span class="dot filled"></span><span class="dot filled"></span>
+          <span class="dot filled"></span><span class="dot filled"></span><span class="dot filled"></span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div>
+          <div class="skill-name">插画与视觉叙事</div>
+          <div class="skill-desc">概念插画、编辑插图</div>
+        </div>
+        <div class="skill-level">
+          <span class="dot filled"></span><span class="dot filled"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
   </div>
 
-  <script>
-    document.getElementById('today').textContent =
-      new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
-  </script>
+  <footer id="contact">
+    <div class="wrap" style="display:flex; justify-content:space-between; width:100%; padding:0 32px;">
+      <span>© 2026 陈亦帆</span>
+      <a href="mailto:hello@example.com">hello@example.com</a>
+    </div>
+  </footer>
 
 </body>
 </html>
